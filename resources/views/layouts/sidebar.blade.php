@@ -1,18 +1,22 @@
 <div class="deznav">
     <div class="deznav-scroll">
         <ul class="metismenu" id="menu">
-            <li><a href="{{ route('dashboard') }}" class="ai-icon" aria-expanded="false">
+        @if (Auth::user()->role == 'admin')
+            <li>
+                <a href="{{ route('admin') }}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-television"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
-
-            @if (Auth::user()->role == 'admin')
-    
             <li><a href="{{ route('user-management') }}" class="ai-icon" aria-expanded="false">
                 <i class="flaticon-381-user-3"></i>
                 <span class="nav-text">User Management</span>
             </a>
+            </li>
+            <li><a href="{{ route('riwayat-admin') }}" class="ai-icon" aria-expanded="false">
+                <i class="flaticon-381-list-1"></i>
+                <span class="nav-text">Riwayat Pengajuan</span>
+                </a>
             </li>
             {{-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-381-user-3"></i>
@@ -26,14 +30,24 @@
                 <li><a href="./app-calender.html">Pemberi Rekomendasi</a></li>
             </ul>
         </li> --}}
+            @elseif (Auth::user()->role == 'pemohon')
+
+            <li>
+                <a href="{{ route('pemohon') }}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-television"></i>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+
+            <li><a href="{{ route('pengajuan') }}" class="ai-icon" aria-expanded="false">
+                <i class="flaticon-381-plus"></i>
+                <span class="nav-text">Pengajuan</span>
+            </a>
+            </li>
+
 
             @endif
           
-            <li><a href="widget-basic.html" class="ai-icon" aria-expanded="false">
-                    <i class="flaticon-381-list-1"></i>
-                    <span class="nav-text">Riwayat Pengajuan</span>
-                </a>
-            </li>
             
         </ul>
     </div>

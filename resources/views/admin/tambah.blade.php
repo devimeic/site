@@ -16,25 +16,49 @@
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Nama</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="name" name="name" class="form-control" placeholder="Nama" required>
+                                        <input type="text" id="name" name="name" class="form-control @error('name') is invalid @enderror" placeholder="Nama" >
+                                        @error('name')
+                                        <div class="alert alert-danger mb-1">{{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Username</label>
                                     <div class="col-sm-9">
-                                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+                                        <input type="text" id="username" name="username" class="form-control @error('username') is invalid @enderror" placeholder="Username">
+                                        @error('username')
+                                        <div class="alert alert-danger mb-1">{{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">Password</label>
                                     <div class="col-sm-9">
-                                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                                        <input type="password" id="password" name="password" class="form-control @error('password') is invalid @enderror" placeholder="Password">
+                                        @error('password')
+                                        <div class="alert alert-danger mb-1">{{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-sm-3 col-form-label">No HP</label>
                                     <div class="col-sm-9">
-                                        <input type="number" id="no_hp" name="no_hp" class="form-control" placeholder="No HP" required>
+                                        <input type="number" id="no_hp" name="no_hp" class="form-control @error('no_hp') is invalid @enderror" placeholder="No HP">
+                                        @error('no_hp')
+                                        <div class="alert alert-danger mb-1">{{ $message }}
+                                            <button type="button" class="close h-100" data-dismiss="alert" aria-label="Close"><span><i class="mdi mdi-close"></i></span>
+                                            </button>
+                                        </div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="form-group row">
@@ -55,7 +79,7 @@
                                     <div class="col-sm-9">
                                         <select class="form-control default-select" id="status_users" name="status_users">
                                             <option value="aktif">aktif</option>
-                                            <option value="tidak aktif">tidak aktif</option>\
+                                            <option value="tidak aktif">tidak aktif</option>
                                         </select>
                                     </div>
                                 </div>

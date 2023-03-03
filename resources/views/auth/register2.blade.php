@@ -24,16 +24,16 @@
                         <div class="row no-gutters">
                             <div class="col-xl-12">
                                 <div class="auth-form">
-									<div class="text-center">
-										{{-- <img src="disk/images/logo-magetan.png" alt="" class="w-25 mb-1"> --}}
+                                    <div class="text-center mb-2">
+										<a href="index.html"><img src="disk/images/logo-magetan.png" alt="logo" width="70"></a>
 									</div>
-                                    <h4 class="text-center my-2 text-white font-weight-bold">Registrasi Akun</h4>
+                                    <h4 class="text-center mb-4 text-white font-weight-bold">Registrasi Akun</h4>
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
-
-                                        <div class="form-group">
+                                    <div class="row">
+                                        <div class="form-group col-lg-6">
                                             <label class="mb-1 text-white"><strong>Nama</strong></label>
-                                            <input id="name" type="text" class="form-control text-primary @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required autocomplete="name" autofocus>
+                                            <input id="name" type="text" class="form-control  @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="Masukkan Nama" required autocomplete="name" autofocus>
 
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -41,9 +41,9 @@
                                                 </span>
                                             @enderror
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group col-lg-6">
                                             <label class="mb-1 text-white"><strong>Username</strong></label>
-                                            <input id="username" type="text" class="form-control text-primary @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="Masukkan Username" required autocomplete="username" autofocus>
+                                            <input id="username" type="text" class="form-control  @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="Masukkan Username" required autocomplete="username" autofocus>
 
                                             @error('username')
                                                 <span class="invalid-feedback" role="alert">
@@ -51,9 +51,10 @@
                                                 </span>
                                             @enderror
                                         </div>
+                                    </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Nomor Telepon</strong></label>
-                                            <input id="no_hp" type="text" class="form-control text-primary @error('no_hp') is-invalid @enderror" name="no_hp" value="{{ old('no_hp') }}" placeholder="Masukkan Nomor Telepon" required autocomplete="no_hp" autofocus>
+                                            <input id="no_hp" type="text" class="form-control  @error('no_hp') is-invalid @enderror" name="no_hp" value="{{ old('no_hp') }}" placeholder="Masukkan Nomor Telepon" required autocomplete="no_hp" autofocus>
 
                                             @error('no_hp')
                                                 <span class="invalid-feedback" role="alert">
@@ -63,7 +64,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Password</strong></label>
-                                            <input id="password" type="password" class="form-control text-primary @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password" required autocomplete="new-password">
+                                            <input id="password" type="password" class="form-control  @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password" required autocomplete="new-password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -73,7 +74,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Ulangi Password</strong></label>
-                                            <input id="password-confirm" type="password" class="form-control text-primary" name="password_confirmation" placeholder="Masukkan Ulang Password " required autocomplete="new-password">
+                                            <input id="password-confirm" type="password" class="form-control " name="password_confirmation" placeholder="Masukkan Ulang Password " required autocomplete="new-password">
                                         </div>
                                         <div class="text-center mt-4">
                                             <button type="submit" class="btn btn-light text-primary btn-block">Daftar</button>

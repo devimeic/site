@@ -20,7 +20,7 @@ class UserFactory extends Factory
             'username' => $this->faker->unique()->userName(),
             // 'email_verified_at' => now(),
             'password' => bcrypt('12345678'), // password
-            'no_hp' => Str::random(12),
+            'no_hp' => $this->faker->numerify('08##########'),
             'role' => Arr::random(['admin', 'pemohon', 'verifikator berkas', 'verifikator lapangan', 'pemberi rekomendasi']),
             'status_users' => Arr::random(['aktif', 'tidak aktif']),
             'remember_token' => Str::random(10),

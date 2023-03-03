@@ -13,6 +13,8 @@
     <link href="/disk/css/style.css" rel="stylesheet">
     <!-- Datatable -->
     <link href="/disk/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!-- Form step -->
+    <link href="/disk/vendor/jquery-smartwizard/dist/css/smart_wizard.min.css" rel="stylesheet">
     <!-- Custom Stylesheet -->
     <link href="/disk/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet">
 	<link href="/disk/vendor/owl-carousel/owl.carousel.css" rel="stylesheet">
@@ -67,6 +69,16 @@
      <!-- Datatable -->
      <script src="/disk/vendor/datatables/js/jquery.dataTables.min.js"></script>
      <script src="/disk/js/plugins-init/datatables.init.js"></script>
+
+      <!-- Form Steps -->
+	<script src="/disk/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js"></script>
+	
+	<script>
+		$(document).ready(function(){
+			// SmartWizard initialize
+			$('#smartwizard').smartWizard(); 
+		});
+	</script>
 
 </body>
 

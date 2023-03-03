@@ -24,7 +24,8 @@
                                                 <th>No</th>
                                                 <th>Nama User</th>
                                                 <th>Username</th>
-                                                <th>Password</th>
+                                                {{-- <th>Password</th> --}}
+                                                <th>No HP</th>
 												<th>Rule</th>
 												<th>Status </th>
                                                 <th>Aksi</th>
@@ -34,12 +35,14 @@
                                             @php
                                                 $no = 1;
                                             @endphp
+                                            
                                             @foreach ($data as $usr)
                                                 <tr>
                                                     <td>{{ $no++ }}</td>
                                                     <td>{{ $usr->name }}</td>
                                                     <td>{{ $usr->username }}</td>
-                                                    <td>*****</td>
+                                                    {{-- <td>***** </td> --}}
+                                                    <td>{{ $usr->no_hp }}</td>
                                                     <td>{{ $usr->role }}</td>
                                                     <td>
                                                         @if ($usr->status_users == 'aktif')
@@ -49,27 +52,33 @@
                                                         @endif
                                                     <td>
                                                         <div class="d-flex">
-                                                            <button type="button" class="btn btn-primary shadow btn-xs sharp mr-1" data-toggle="modal" data-target="#editModal">
+                                                            <button type="button" class="btn btn-primary shadow btn-xs sharp mr-1" data-toggle="modal" data-target="#editModal-{{ $usr->id }}">
                                                                 <i class="fa fa-pencil"></i>
                                                             </button>
-                                                            <a href="#" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a>
+                                                            
+                                                            {{-- <a href="{{ route('hapus', $usr->id) }}" class="btn btn-danger shadow btn-xs sharp"><i class="fa fa-trash"></i></a> --}}
+                                                            @include('admin.edit')
+                                                            
+
                                                         </div>
                                                     </td>
                                                 </tr>
                                             
                                             @endforeach
-                                            
+                                         
                                         </tbody>
                                     </table>
+                                   
                                 </div>
                             </div>
                         </div>
                     </div>
-					
+			
 				</div>
 
-  @include('admin.tambah')
-  @include('admin.edit')
+                @include('admin.tambah')
+        
+
 
   
 @endsection

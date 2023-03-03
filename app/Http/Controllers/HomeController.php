@@ -26,9 +26,11 @@ class HomeController extends Controller
     {
         if ( Auth::user()->role == "admin"){
             $tittle = 'Dashboard';
-            return view('admin.dashboard', compact('tittle'));
+            // return view('admin.dashboard', compact('tittle'));
+            return redirect()->route('admin');
         } elseif (Auth::user()->role == "pemohon"){
-            return view('pemohon.dashboard');
+            $tittle = 'Dashboard';
+            return redirect()->route('pemohon');
         } elseif (Auth::user()->role == "verifikator berkas"){
             return view('berkas.dashboard');
         } elseif (Auth::user()->role == "verifikator lapangan"){

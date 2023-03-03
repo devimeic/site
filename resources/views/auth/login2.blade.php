@@ -29,9 +29,14 @@
                                     <h4 class="text-center mb-4 text-white font-weight-bold">Login Akun</h4>
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
+                                        @if (session('error'))
+                                            <div class="alert alert-danger">
+                                                {{ session('error') }}
+                                            </div>
+                                        @endif
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Username</strong></label>
-                                            <input id="username" type="username" class="form-control text-primary  @error('username') is-invalid @enderror" name="username" placeholder="Masukkan Username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                            <input id="username" type="username" class="form-control  @error('username') is-invalid @enderror" name="username" placeholder="Masukkan Username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                                             @error('username')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -40,7 +45,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label class="mb-1 text-white"><strong>Password</strong></label>
-                                            <input id="password" type="password" class="form-control text-primary @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password" required autocomplete="current-password">
+                                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Masukkan Password" required autocomplete="current-password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -49,10 +54,6 @@
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
                                             <div class="form-group">
-                                               <div class="custom-control custom-checkbox ml-1 text-white">
-													<input type="checkbox" class="custom-control-input" id="basic_checkbox_1">
-													<label class="custom-control-label" for="basic_checkbox_1">Remember my preference</label>
-												</div>
                                             </div>
                                             <div class="form-group">
                                                 <a class="text-white" href="page-forgot-password.html">Lupa Password?</a>
